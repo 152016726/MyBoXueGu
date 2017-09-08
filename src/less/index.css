@@ -1,0 +1,286 @@
+/*css 初始化 */
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+img {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+fieldset,
+img,
+input,
+button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  /*在低版本的ie浏览器里面不支持*/
+  outline-style: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+input {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-family: "SimSun", "宋体";
+}
+select,
+input {
+  vertical-align: middle;
+}
+select,
+input,
+textarea {
+  font-size: 12px;
+  margin: 0;
+}
+/*禁止手动修改大小*/
+textarea {
+  resize: none;
+}
+/*去掉图片底部默认空白缝隙*/
+img {
+  border: 0;
+  vertical-align: middle;
+}
+/*合并外连线*/
+table {
+  /*表格的单元格边框默认是不会重合的，这个属性可以让表格的边框重合在一起，看起来更加细一些*/
+  border-collapse: collapse;
+}
+body {
+  font: 12px/150% Arial, Verdana, "\5b8b\4f53";
+  /*unitedCode的写法，宋体的写法*/
+  color: #666;
+  background: #fff;
+  font-family: MicrosoftYaHei;
+}
+* {
+  box-sizing: border-box;
+}
+/*清除浮动*/
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+a {
+  color: #1A7DF4;
+  text-decoration: none;
+}
+a:hover {
+  color: #f6f6f6;
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 100%;
+}
+s,
+i,
+em {
+  font-style: normal;
+  text-decoration: none;
+}
+/*公共类*/
+.w {
+  /*版心*/
+  width: 1280px;
+  margin-left: 56px;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.al {
+  text-align: left;
+}
+.ac {
+  text-align: center;
+}
+.ar {
+  text-align: right;
+}
+.pr {
+  position: relative;
+}
+.pa {
+  position: absolute;
+}
+.hide {
+  display: none;
+}
+.col-red {
+  color: #F10215 !important;
+}
+body {
+  width: 1366px;
+  background-color: #f4f6f8;
+}
+/*css初始化完成*/
+.sides {
+  width: 180px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: #2f4050;
+}
+.sides .headImg {
+  height: 160px;
+  padding-top: 25px;
+  text-align: center;
+  background-color: #243443;
+}
+.sides .headImg .mode {
+  height: 80px;
+  width: 80px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+.sides .headImg .mode img {
+  display: block;
+  width: 100%;
+}
+.sides .headImg h4 {
+  color: #a9b0c2;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.sides .a_nav {
+  padding: 20px 0;
+  color: #f6f6f6;
+}
+.sides .a_nav h4 {
+  font-size: 14px;
+  padding: 10px 20px;
+}
+.sides .a_nav a {
+  color: #a9b0c2;
+}
+.sides .a_nav a span {
+  margin-right: 14px;
+  font-size: 12px;
+}
+.sides .a_nav a .glyphicon-menu-right {
+  float: right;
+  font-size: 10px;
+  margin-right: 6px;
+  line-height: 14px;
+}
+.sides .a_nav a:hover {
+  color: #f6f6f6;
+  text-decoration: none;
+}
+.sides .a_nav table tr td {
+  border: none;
+  text-align: center;
+}
+.sides .a_nav table tr td:hover {
+  background-color: #243443;
+}
+.sides .a_nav table tr td:hover a {
+  color: #f6f6f6;
+}
+.sides .a_nav .panel-group {
+  border: none;
+}
+.sides .a_nav .panel-group .panel-default {
+  background-color: #2f4050;
+  border: none;
+}
+.sides .a_nav .panel-group .panel-default .panel-heading {
+  background-color: #2f4050;
+  padding: 0;
+}
+.sides .a_nav .panel-group .panel-default .panel-heading:hover {
+  background-color: #243443;
+}
+.sides .a_nav .panel-group .panel-default .panel-heading:hover a {
+  color: #f6f6f6;
+}
+.main {
+  min-width: 844px;
+  padding: 72px 0 30px 180px;
+}
+.main .m_head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 180px;
+}
+.main .m_head .navbar {
+  background: #fff;
+  width: 100%;
+  font-size: 14px;
+}
+.main .m_head .navbar #navbar-brand {
+  color: #fff;
+  font-size: 18px;
+}
+.main .m_head .navbar #bell {
+  position: relative;
+}
+.main .m_head .navbar #bell i {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  color: #fff;
+  background: #5cb85c;
+  top: 8px;
+  right: 10px;
+  text-align: center;
+  line-height: 16px;
+  border-radius: 4px;
+}
+.main .m_head .navbar .navbar-brand {
+  height: auto;
+  line-height: 1;
+  padding: 4px 6px;
+  margin: 12px 0 0 15px;
+  color: #FFF;
+  background-color: #5cb85c;
+  border-radius: 2px;
+}
+.main .m_head .navbar a {
+  color: #337ab7;
+  font-size: 14px;
+}
+.main .m_head .navbar a span {
+  color: #337ab7;
+  margin-right: 5px;
+}
