@@ -10,16 +10,12 @@ var buffer = require('vinyl-buffer');
 var concat=require('gulp-concat');
 
 gulp.task('htmlmin',function () {
-    gulp.src('./src/**/*.html')
+    gulp.src(['./src/**/*.html','index.html'])
         .pipe(htmlmin({
             collapseWhitespace: true, // 去掉空白字符
             minifyJS: true,//压缩页面JS
             minifyCSS: true,//压缩页面CSS
             removeComments: true//清除HTML注释
-        }))
-        .pipe(rename({
-            dirname:'html',
-            suffix:'.min'
         }))
         .pipe(gulp.dest('./dist'));
 });
@@ -27,27 +23,20 @@ gulp.task('uglify',function () {
     gulp.src('./src/**/*.js')
         .pipe(uglify())
         .pipe(rename({
-            dirname:'js',
             suffix:'.min'
         }))
         .pipe(gulp.dest('./dist'));
 });
 gulp.task('cleancss',function () {
-    gulp.src('./src/**/*.css')
+    gulp.src('./src/less/*.css')
         .pipe(cleancss())
-        .pipe(rename({
-            dirname:'css',
-            suffix:'.min'
-        }))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./dist/css'))
 });
 gulp.task('less',function () {
-    gulp.src('./src/less/index.less')
+    gulp.src('./src/less/*.less')
         .pipe(less())
-        .pipe(rename({
-            dirname:'css'
-        }))
-        .pipe(gulp.dest('./dist'));
+        .pipe(cleancss())
+        .pipe(gulp.dest('./dist/css'));
 });
 
 
@@ -109,7 +98,7 @@ gulp.task('js',function () {
 });
 //添加统一打包的任务
 gulp.task('build',function () {
-    gulp.run(['htmlmin','cleancss','less','jsLib','uglify','js'])
+    gulp.run(['htmlmin','less','cleancss','jsLib','uglify','js'])
 });
 
 gulp.task('default',function () {
@@ -120,7 +109,7 @@ gulp.task('default',function () {
     gulp.watch('./src/**/*.js',function () {
         gulp.run('uglify');
     });
-    gulp.watch('./src/**/*.css',function () {
+    gulp.watch('./src/less/*.css',function () {
         gulp.run('cleancss');
     });
     gulp.watch('./src/less/index.less',function () {
