@@ -21,6 +21,24 @@ body {
 ul, li {
 	list-style:none
 }
+input.disabled {
+	background-color: #CCC !important;
+}
+button.disabled{
+	background-color: #CCC !important;
+}
+#stu_code_hide{
+	width: 100px;
+}
+.verify {
+    width: 80px;
+    height: 40px;
+    background: red;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    color: #fff;
+}
 /*tab登录选项卡*/
 #tab {
 	width:410px;
@@ -47,7 +65,7 @@ ul, li {
 	background-color:#000000;
 	color:#FFFFFF;
 	font-size:16px;
- filter:alpha(opacity:80);
+    filter:alpha(opacity:80);
 	opacity:0.8;
 }
 #tab .tab_box {

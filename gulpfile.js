@@ -22,9 +22,6 @@ gulp.task('htmlmin',function () {
 gulp.task('uglify',function () {
     gulp.src('./src/**/*.js')
         .pipe(uglify())
-        .pipe(rename({
-            suffix:'.min'
-        }))
         .pipe(gulp.dest('./dist'));
 });
 gulp.task('cleancss',function () {
@@ -46,7 +43,8 @@ gulp.task('less',function () {
      'node_modules/art-template/lib/temlate-web.js',
      'node_modules/jquery/dist/jquery.js',
      'node_modules/bootstrap/dist/js/bootstrap.js',
-     'node_modules/jquery-form/dist/jquery.form.min.js'
+     'node_modules/jquery-form/dist/jquery.form.min.js',
+     'node_modules/echarts/dist/echarts.min.js'
  ];
  //合并所有的第三方包为一个js
 gulp.task('jsLib',function () {
@@ -81,7 +79,9 @@ var jsModules=[
     //学科分类
     'src/js/category/add.js',
     'src/js/category/edit.js',
-    'src/js/category/list.js'
+    'src/js/category/list.js',
+    'src/js/common/common.js'
+
 ]
 
 gulp.task('js',function () {
@@ -98,24 +98,7 @@ gulp.task('js',function () {
 });
 //添加统一打包的任务
 gulp.task('build',function () {
-    gulp.run(['htmlmin','less','cleancss','jsLib','uglify','js'])
+    gulp.run(['htmlmin','less','cleancss','jsLib','uglify','js','watch'])
 });
 
-gulp.task('default',function () {
-    gulp.run('build');
-    gulp.watch('./src/*.html',function () {
-        gulp.run('htmlmin');
-    });
-    gulp.watch('./src/**/*.js',function () {
-        gulp.run('uglify');
-    });
-    gulp.watch('./src/less/*.css',function () {
-        gulp.run('cleancss');
-    });
-    gulp.watch('./src/less/index.less',function () {
-        gulp.run('less');
-    });
-    gulp.watch('./src/**/*.js',function () {
-        gulp.run('js');
-    });
-});
+gulp.task('default',['htmlmin','uglify','cleancss','less','js']);

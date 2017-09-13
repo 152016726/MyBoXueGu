@@ -1,10 +1,15 @@
-$('#backoff').on('click',function () {
+﻿// 返回登录页
+$("#backend").on("click",function () {
     $.ajax({
-        type:"post",
+        type:'post',
         url:'/v6/logout',
-        success:function (data) {
-            alert(data.msg);
-            location.href='../../../../index.html';
+        dataType:'json',
+        success:function (result) {
+            console.log(result);
+            if(result.code=='200'){
+                alert(result.msg);
+                location.href='/index.html';
+            }
         }
     })
 })

@@ -16,14 +16,18 @@
     "gulp-less": "^3.3.2",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^3.0.0",
+    "requirejs": "^2.3.5",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
     "art-template": "^4.12.1",
     "bootstrap": "^3.3.7",
+    "echarts": "^3.7.1",
+    "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "jquery": "^3.2.1",
-    "jquery-form": "^4.2.1"
+    "jquery-form": "^4.2.1",
+    "nprogress": "^0.2.0"
   }
 }
